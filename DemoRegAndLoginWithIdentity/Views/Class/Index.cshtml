@@ -1,0 +1,33 @@
+﻿
+
+@model List<DemoRegAndLoginWithIdentity.Models.Domain.Class>
+@{
+}
+<h1>Patient</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>TestName</th>
+            <th>Time</th>
+            <th>DateOfBirth</th>
+            <th>BloodGroup</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var classes in Model)
+        {
+            <tr>
+                <th>@classes.id</th>
+                <th>@classes.name</th>
+                <th>@classes.test</th>
+                <th>@classes.time</th>
+                <th>@classes.DateOfBirth.ToString("dd-MM-yyyy")</th>
+                <th>@classes.BloodGroup</th>
+                <td><a class="btn btn-primary" href="class/View/@classes.id">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,71 @@
+﻿@model DemoRegAndLoginWithIdentity.Models.AddClassView
+
+@{
+}
+<h1>Add Patient</h1>
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="name" pattern="[a-zA-Z\s]+" title="Only letters and spaces are allowed">
+    </div>
+    
+
+    <div class="form-group">
+        <label asp-for="test" class="control-label">Test</label>
+        <select asp-for="test" class="form-control">
+            <option value="">Select Test</option>
+            <option value="Electrolyte">Electrolyte</option>
+            <option value="CBC">CBC</option>
+            <option value="Thyroid">Thyroid</option>
+            <option value="Diabetis">Diabetis</option>
+            <option value="Lipid Profile Test">Lipid Profile Test</option>
+
+        </select>
+        <span asp-validation-for="test" class="text-danger"></span>
+    </div>
+    
+    <div class="mb-3">
+        <label for="" class="form-label">TimeSlot</label>
+        <input type="number" class="form-control" asp-for="time">
+
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">DateOfBirth</label>AddClassView
+        <input type="Date" class="form-control" asp-for="DateOfBirth">
+
+    </div>
+   
+
+
+    <div class="mb-3">
+        <label for="" class="form-label">Blood Group</label>
+        <select class="form-select" asp-for="BloodGroup">
+            <option value="">Select Blood Group</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" onclick="confirmSubmit()">Submit</button>
+</form>
+
+<script>
+
+    function confirmSubmit() {
+        if (confirm("Are you sure you want to submit the data?")) {
+            document.getElementById.submit();
+        } else {
+
+            alert("Submission canceled. No data will be submitted.");
+        }
+    }
+
+</script>
+
+
